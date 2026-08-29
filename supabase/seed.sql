@@ -1,0 +1,1 @@
+-- Add local development seed data after creating auth users in Supabase Studio.
