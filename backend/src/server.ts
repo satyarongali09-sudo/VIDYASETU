@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import helmet from "helmet";
+import * as helmet from "helmet";
 import morgan from "morgan";
 import { env } from "./config/env.js";
 import { supabaseAdmin } from "./services/supabase.js";
@@ -14,7 +14,7 @@ import sessionRoutes from "./routes/sessions.js";
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet.default());
 app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
 app.use(express.json({ limit: "1mb" }));
 app.use(morgan("tiny"));
